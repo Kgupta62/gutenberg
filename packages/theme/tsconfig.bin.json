@@ -5,7 +5,8 @@
 		"composite": true,
 		"rootDir": "bin",
 		"noEmit": true,
-		"allowImportingTsExtensions": true
+		"allowImportingTsExtensions": true,
+		"types": [ "style-imports", "terrazzo-parser" ]
 	},
 	"include": [ "bin" ],
 	"exclude": [],
