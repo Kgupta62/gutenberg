@@ -14,6 +14,7 @@
 ### New Features
 
 -   Add `Popover` primitive ([#76438](https://github.com/WordPress/gutenberg/pull/76438)).
+-   Add `Drawer` primitive ([#XXXXX](https://github.com/WordPress/gutenberg/pull/XXXXX)).
 
 ### Bug Fixes
 
