@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Code Quality
+
+-   Remove CSS overrides targeting `.components-modal__frame` and `[role="document"]` for duplicate template part and duplicate pattern modals, replaced by declarative `modalSize` prop.
+
 ## 6.43.0 (2026-04-01)
 
 ## 6.42.0 (2026-03-18)
