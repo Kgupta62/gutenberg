@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { action } from 'storybook/actions';
 import { fn } from 'storybook/test';
 
-import { AlertDialog } from '../..';
+import * as AlertDialog from '../index';
 
 const meta: Meta< typeof AlertDialog.Root > = {
 	title: 'Design System/Components/AlertDialog',
