@@ -561,7 +561,7 @@ module.exports = {
 			},
 		},
 		{
-			files: [ 'packages/ui/src/**' ],
+			files: [ 'packages/ui/**', 'packages/design-system-mcp/**' ],
 			rules: {
 				'@wordpress/dependency-group': [ 'error', 'never' ],
 			},
