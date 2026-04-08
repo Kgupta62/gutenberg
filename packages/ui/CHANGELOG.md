@@ -21,6 +21,7 @@
 
 ### Enhancements
 
+-   `Dialog`, `AlertDialog`: Add `portalClassName` prop to `Popup`, allowing consumers to set per-instance CSS custom properties (e.g. `--wp-ui-dialog-z-index`) that cascade to both the backdrop and popup ([#76487](https://github.com/WordPress/gutenberg/pull/76487)).
 -   Add defensive styles against global WordPress stylesheets like common.css and forms.css ([#76783](https://github.com/WordPress/gutenberg/pull/76783)).
 
 ## 0.10.0 (2026-04-01)

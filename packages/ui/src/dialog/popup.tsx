@@ -27,6 +27,7 @@ const Popup = forwardRef< HTMLDivElement, PopupProps >( function DialogPopup(
 		size = 'medium',
 		initialFocus,
 		finalFocus,
+		portalClassName,
 		children,
 		...props
 	},
@@ -39,7 +40,7 @@ const Popup = forwardRef< HTMLDivElement, PopupProps >( function DialogPopup(
 	const mergedRef = useMergeRefs( [ ref, popupRef ] );
 
 	return (
-		<_Dialog.Portal>
+		<_Dialog.Portal className={ portalClassName }>
 			<_Dialog.Backdrop className={ styles.backdrop } />
 			<ThemeProvider>
 				<_Dialog.Popup

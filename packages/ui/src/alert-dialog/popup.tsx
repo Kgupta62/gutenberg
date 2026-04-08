@@ -29,6 +29,7 @@ const Popup = forwardRef< HTMLDivElement, PopupProps >(
 			children,
 			confirmButtonText = __( 'OK' ),
 			cancelButtonText = __( 'Cancel' ),
+			portalClassName,
 			...props
 		},
 		ref
@@ -44,7 +45,7 @@ const Popup = forwardRef< HTMLDivElement, PopupProps >(
 		const buttonsDisabled = phase !== 'idle' || undefined;
 
 		return (
-			<_AlertDialog.Portal>
+			<_AlertDialog.Portal className={ portalClassName }>
 				<_AlertDialog.Backdrop className={ dialogStyles.backdrop } />
 				<ThemeProvider>
 					<_AlertDialog.Popup
