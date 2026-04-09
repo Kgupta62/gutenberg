@@ -41,7 +41,6 @@ describe( 'Dialog', () => {
 		const actionRef = createRef< HTMLButtonElement >();
 		const headerRef = createRef< HTMLDivElement >();
 		const titleRef = createRef< HTMLHeadingElement >();
-		const descriptionRef = createRef< HTMLParagraphElement >();
 		const closeIconRef = createRef< HTMLButtonElement >();
 		const footerRef = createRef< HTMLDivElement >();
 
@@ -55,9 +54,6 @@ describe( 'Dialog', () => {
 						</Dialog.Title>
 						<Dialog.CloseIcon ref={ closeIconRef } />
 					</Dialog.Header>
-					<Dialog.Description ref={ descriptionRef }>
-						A test description
-					</Dialog.Description>
 					<Dialog.Footer ref={ footerRef }>
 						<Dialog.Action ref={ actionRef }>Close</Dialog.Action>
 					</Dialog.Footer>
@@ -79,7 +75,6 @@ describe( 'Dialog', () => {
 		// Now that the dialog is open, verify all inner refs
 		expect( headerRef.current ).toBeInstanceOf( HTMLDivElement );
 		expect( titleRef.current ).toBeInstanceOf( HTMLHeadingElement );
-		expect( descriptionRef.current ).toBeInstanceOf( HTMLParagraphElement );
 		expect( closeIconRef.current ).toBeInstanceOf( HTMLButtonElement );
 		expect( actionRef.current ).toBeInstanceOf( HTMLButtonElement );
 		expect( footerRef.current ).toBeInstanceOf( HTMLDivElement );

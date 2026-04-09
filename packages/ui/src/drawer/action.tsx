@@ -8,11 +8,17 @@ import type { ActionProps } from './types';
  * Wraps the design system `Button` component.
  */
 const Action = forwardRef< HTMLButtonElement, ActionProps >(
-	function DrawerAction( { render, ...props }, ref ) {
+	function DrawerAction( { render, disabled, loading, ...props }, ref ) {
+		// Resolve `disabled` the same way Button does so that
+		// _Drawer.Close's internal useButton (which controls
+		// aria-disabled) stays in sync with the rendered Button.
+		const resolvedDisabled = disabled ?? loading;
+
 		return (
 			<_Drawer.Close
 				ref={ ref }
-				render={ <Button render={ render } /> }
+				render={ <Button render={ render } loading={ loading } /> }
+				disabled={ resolvedDisabled }
 				{ ...props }
 			/>
 		);

@@ -8,7 +8,7 @@ import {
 } from '@wordpress/theme';
 import { unlock } from '../lock-unlock';
 import { useDeprioritizedInitialFocus } from '../utils/use-deprioritized-initial-focus';
-import { DialogValidationProvider, useDialogModal } from './context';
+import { DialogValidationProvider } from './context';
 import styles from './style.module.css';
 import type { PopupProps } from './types';
 
@@ -24,6 +24,7 @@ const CLOSE_ICON_ATTR = 'data-wp-ui-dialog-close-icon';
 const Popup = forwardRef< HTMLDivElement, PopupProps >( function DialogPopup(
 	{
 		className,
+		container,
 		size = 'medium',
 		initialFocus,
 		finalFocus,
@@ -37,13 +38,10 @@ const Popup = forwardRef< HTMLDivElement, PopupProps >( function DialogPopup(
 		deprioritizedAttribute: CLOSE_ICON_ATTR,
 	} );
 	const mergedRef = useMergeRefs( [ ref, popupRef ] );
-	const modal = useDialogModal();
 
 	return (
-		<_Dialog.Portal>
-			{ modal === true && (
-				<_Dialog.Backdrop className={ styles.backdrop } />
-			) }
+		<_Dialog.Portal container={ container }>
+			<_Dialog.Backdrop className={ styles.backdrop } />
 			<ThemeProvider>
 				<_Dialog.Popup
 					ref={ mergedRef }

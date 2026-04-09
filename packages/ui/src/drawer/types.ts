@@ -37,6 +37,14 @@ export interface PopupProps
 	children?: ReactNode;
 
 	/**
+	 * A parent element to render the portal into.
+	 *
+	 * Useful for cross-document rendering, such as rendering a drawer
+	 * in a parent document when the trigger is inside an iframe.
+	 */
+	container?: _Drawer.Portal.Props[ 'container' ];
+
+	/**
 	 * Controls the size of the drawer along its relevant axis (width for
 	 * left/right drawers, height for up/down drawers).
 	 *

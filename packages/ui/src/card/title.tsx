@@ -1,5 +1,7 @@
 import { forwardRef } from '@wordpress/element';
+import clsx from 'clsx';
 import { Text } from '../text';
+import styles from './style.module.css';
 import type { TitleProps } from './types';
 
 /**
@@ -7,11 +9,12 @@ import type { TitleProps } from './types';
  * prop to swap in a semantic heading element when appropriate.
  */
 export const Title = forwardRef< HTMLDivElement, TitleProps >(
-	function CardTitle( { render, children, ...props }, ref ) {
+	function CardTitle( { className, render, children, ...props }, ref ) {
 		return (
 			<Text
 				variant="heading-lg"
 				render={ render ?? <div ref={ ref } { ...props } /> }
+				className={ clsx( styles.title, className ) }
 			>
 				{ children }
 			</Text>

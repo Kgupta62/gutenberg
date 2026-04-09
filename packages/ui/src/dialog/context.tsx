@@ -1,4 +1,3 @@
-import type { Dialog as _Dialog } from '@base-ui/react/dialog';
 import {
 	createContext,
 	useCallback,
@@ -7,31 +6,6 @@ import {
 	useMemo,
 	useRef,
 } from '@wordpress/element';
-
-// -- Modal context ----------------------------------------------------------
-
-const DialogModalContext =
-	createContext< _Dialog.Root.Props[ 'modal' ] >( true );
-
-export function DialogModalProvider( {
-	modal = true,
-	children,
-}: {
-	modal?: _Dialog.Root.Props[ 'modal' ];
-	children: React.ReactNode;
-} ) {
-	return (
-		<DialogModalContext.Provider value={ modal }>
-			{ children }
-		</DialogModalContext.Provider>
-	);
-}
-
-export function useDialogModal() {
-	return useContext( DialogModalContext );
-}
-
-// -- Validation context (dev-only) ------------------------------------------
 
 /**
  * Whether validation is enabled. This is a build-time constant that allows
