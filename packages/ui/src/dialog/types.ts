@@ -9,6 +9,7 @@ export interface RootProps
 		_Dialog.Root.Props,
 		| 'open'
 		| 'onOpenChange'
+		| 'onOpenChangeComplete'
 		| 'defaultOpen'
 		| 'modal'
 		| 'disablePointerDismissal'
@@ -76,6 +77,13 @@ export interface TitleProps extends ComponentProps< 'h2' > {
 	 * heading and the accessible label for the dialog.
 	 */
 	children: ReactNode;
+}
+
+export interface DescriptionProps extends ComponentProps< 'p' > {
+	/**
+	 * The description content to be rendered inside the component.
+	 */
+	children?: ReactNode;
 }
 
 export interface CloseIconProps
