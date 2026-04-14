@@ -197,6 +197,23 @@ async function waitForComponentToBeInitializedWithSelectedTab(
 }
 
 describe( 'Tabs', () => {
+	// Base UI's useTransitionStatus hook schedules requestAnimationFrame
+	// callbacks that may fire outside act() boundaries due to the jsdom RAF
+	// polyfill using setTimeout with a random delay. Opt out of the React
+	// act-environment for this suite to avoid the resulting warnings.
+	let previousIsReactActEnvironment: unknown;
+	beforeEach( () => {
+		previousIsReactActEnvironment = (
+			globalThis as Record< string, unknown >
+		 ).IS_REACT_ACT_ENVIRONMENT;
+		( globalThis as Record< string, unknown > ).IS_REACT_ACT_ENVIRONMENT =
+			false;
+	} );
+	afterEach( () => {
+		( globalThis as Record< string, unknown > ).IS_REACT_ACT_ENVIRONMENT =
+			previousIsReactActEnvironment;
+	} );
+
 	describe( 'Adherence to spec and basic behavior', () => {
 		it( 'should apply the correct roles, semantics and attributes', async () => {
 			render(
