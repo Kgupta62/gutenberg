@@ -29,6 +29,10 @@
 -   Add defensive styles against global WordPress stylesheets like common.css and forms.css ([#76783](https://github.com/WordPress/gutenberg/pull/76783)).
 -   `VisuallyHidden`: Improve Storybook stories and documentation for the `render` prop composition pattern.
 
+### Documentation
+
+-   Clarify that the "Within WordPress" setup section applies to standard editor screens, and that custom WP Admin pages need manual setup ([#77338](https://github.com/WordPress/gutenberg/pull/77338)).
+
 ### Internal
 
 -   `Card`: Remove redundant `margin: 0` from `Card.Title` now that `Text` applies it by default ([#77187](https://github.com/WordPress/gutenberg/pull/77187)).

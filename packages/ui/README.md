@@ -30,7 +30,9 @@ As an implementation of the design system and companion to the `@wordpress/theme
 
 ### Within WordPress
 
-Stylesheets are managed on your behalf in a WordPress context, so you don't need to worry about loading them yourself.
+In standard WordPress editor screens (such as the post editor or the site editor), stylesheets and layout styles are managed on your behalf — you don't need to worry about loading them yourself.
+
+However, if you're building a custom WP Admin page that uses `@wordpress/ui` components as an npm dependency (rather than through the standard editor infrastructure), you'll need to apply the same setup described in the ["Outside WordPress"](#outside-wordpress) section below.
 
 ### Outside WordPress
 
